@@ -1,48 +1,53 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import util.AlertUtils;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import telas.Telas;
 
 public class MenuController {
 
+     Telas telas = new Telas();
 
     @FXML
-    private Button Btn1;
-    @FXML
-    private TextField TxtNumero1;
-    @FXML
-    private TextField TxtNumero2;
+    private Button VerificarBancoDeDados;
 
     @FXML
-    private Label LabelResultado;
+    private Button CadastroCorredores;
 
     @FXML
-    private Button Btn2;
+    private Button GerenciarCorrida;
 
-    public void onBtnSumAction(){
-        try {
-            double n1 = Double.parseDouble(TxtNumero1.getText());
-            double n2 = Double.parseDouble(TxtNumero2.getText());
-            double soma = n1 + n2;
-            LabelResultado.setText(String.valueOf(soma));
+    @FXML
+    private Button TabelaCorredores;
 
-        } catch (NumberFormatException e) {
-            AlertUtils.mostrarAlerta("ERRO!", "Erro parcial", e.getMessage(), Alert.AlertType.INFORMATION);
-        }
-
+    @FXML
+    private void GoToVerificarBancoDeDados(ActionEvent event) {
+        System.out.println("Mudando a scena de nome VerificarBancoDeDados.fxml");
+        Stage stage = (Stage) VerificarBancoDeDados.getScene().getWindow();
+        Telas.alterarTela(stage, "/view/banco/VerificarBancoDeDados.fxml");
     }
 
     @FXML
-    private void onBtn1Action() {
-        AlertUtils.mostrarAlerta("Atenção!", "Você clicou no botão", "Conteúdo", Alert.AlertType.INFORMATION);
-        AlertUtils.mostrarAlerta("Atenção!", null, "Conteúdo", Alert.AlertType.INFORMATION);
-        System.out.println("Click");
+    private void GoToCadastroCorredores() {
+        System.out.println("Mudando a scena de nome CadastroCorredorView.fxml");
+        Stage stage = (Stage) CadastroCorredores.getScene().getWindow();
+        Telas.alterarTela(stage, "/view/cadastro/CadastroCorredorView.fxml");
+    }
 
+    @FXML
+    private void GoToGerenciarCorrida() {
+        System.out.println("Mudando a scena de nome IniciarCorridaView.fxml");
+        Stage stage = (Stage) GerenciarCorrida.getScene().getWindow();
+        Telas.alterarTela(stage, "/view/corrida/IniciarCorridaView.fxml");
+    }
 
+    @FXML
+    private void GoToTabelaCorredores() {
+        System.out.println("Mudando a scena de nome TabelaCorredoresView.fxml");
+        Stage stage = (Stage) GerenciarCorrida.getScene().getWindow();
+        Telas.alterarTela(stage, "/view/corrida/TabelaCorredoresView.fxml");
     }
 
 

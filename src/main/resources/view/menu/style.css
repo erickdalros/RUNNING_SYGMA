@@ -1,0 +1,56 @@
+/* === Estilo geral da tela === */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #20232a, #3a3f47);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* === Título principal === */
+.title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 6, 0, 2, 2);
+    -fx-alignment: center;
+}
+
+/* === Botões === */
+.menu-button {
+    -fx-background-color: #2e8bff;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 350;
+    -fx-pref-height: 50;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0, 1, 1);
+}
+
+.menu-button:hover {
+    -fx-background-color: #1c6ce5;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.menu-button:pressed {
+    -fx-background-color: #154eb0;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* === Container central === */
+.center-box {
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}
+
+/* === Responsividade básica === */
+@media screen and (max-width: 1000px) {
+    .menu-button {
+        -fx-pref-width: 250;
+        -fx-font-size: 16px;
+    }
+    .title {
+        -fx-font-size: 28px;
+    }
+}
