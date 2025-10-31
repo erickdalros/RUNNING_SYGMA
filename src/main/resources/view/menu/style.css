@@ -5,10 +5,10 @@
 }
 
 /* === Título principal === */
-.title {
+.titulo {
     -fx-font-size: 36px;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
+    -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 6, 0, 2, 2);
     -fx-alignment: center;
 }

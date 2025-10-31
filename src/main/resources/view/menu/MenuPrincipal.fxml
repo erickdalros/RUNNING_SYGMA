@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-
-<StackPane xmlns="http://javafx.com/javafx/17"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="controller.MenuController"
-           prefWidth="1500.0" prefHeight="700.0"
-           stylesheets="@style.css">
+<StackPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
 
     <!-- StackPane centraliza tudo -->
     <children>
         <!-- BorderPane define a estrutura principal -->
-        <BorderPane prefWidth="1500.0" prefHeight="700.0">
+        <BorderPane prefHeight="700.0" prefWidth="1500.0">
 
             <!-- Centro do BorderPane: conteúdo -->
             <center>
@@ -32,45 +26,34 @@
 
                     <!-- Botões empilhados -->
                     <VBox alignment="CENTER" spacing="20">
-                        <Button fx:id="VerificarBancoDeDados"
-                                text="VERIFICAR BANCO DE DADOS"
-                                onAction="#GoToVerificarBancoDeDados"
-                                maxWidth="400"
-                                prefHeight="50">
+                        <Button fx:id="VerificarBancoDeDados" maxWidth="400" onAction="#GoToVerificarBancoDeDados" prefHeight="50" text="VERIFICAR BANCO DE DADOS">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Button>
 
-                        <Button fx:id="CadastroCorredores"
-                                text="CADASTRAR CORREDOR"
-                                onAction="#GoToCadastroCorredores"
-                                maxWidth="400"
-                                prefHeight="50">
+                        <Button fx:id="CadastroCorredores" maxWidth="400" onAction="#GoToCadastroCorredores" prefHeight="50" text="CADASTRAR CORREDOR">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Button>
 
-                        <Button fx:id="GerenciarCorrida"
-                                text="GERENCIAR CORRIDA"
-                                onAction="#GoToGerenciarCorrida"
-                                maxWidth="400"
-                                prefHeight="50">
+                        <Button fx:id="GerenciarCorrida" maxWidth="400" onAction="#GoToGerenciarCorrida" prefHeight="50" text="GERENCIAR CORRIDA">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Button>
 
-                        <Button fx:id="TabelaCorredores"
-                                text="TABELA CORREDORES"
-                                onAction="#GoToTabelaCorredores"
-                                maxWidth="400"
-                                prefHeight="50">
+                        <Button fx:id="TabelaCorredores" maxWidth="400" onAction="#GoToTabelaCorredores" prefHeight="50" text="TABELA CORREDORES">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Button>
+                  <Button fx:id="Api" maxWidth="400" onAction="#GoToApi" prefHeight="50" text="ACESSAR API WEB ( BETA )">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                     </VBox>
                 </VBox>
             </center>

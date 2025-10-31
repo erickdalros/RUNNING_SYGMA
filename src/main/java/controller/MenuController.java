@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import telas.Telas;
+import util.AlertUtils;
 
 public class MenuController {
 
@@ -21,6 +22,9 @@ public class MenuController {
 
     @FXML
     private Button TabelaCorredores;
+
+    @FXML
+    private Button Api;
 
     @FXML
     private void GoToVerificarBancoDeDados(ActionEvent event) {
@@ -50,5 +54,9 @@ public class MenuController {
         Telas.alterarTela(stage, "/view/corrida/TabelaCorredoresView.fxml");
     }
 
-
+    @FXML
+    private void GoToApi() {
+        System.out.println("Aqui será feito a implementação do sistema web com API - https:sygmarunning.netfly.com");
+        AlertUtils.mostrarAlerta("Alerta!", null, "Estamos na versão beta... ainda não disponível para usuário comum.... Pedimos paciência enquato desenvolvemos..", Alert.AlertType.WARNING);
+    }
 }
