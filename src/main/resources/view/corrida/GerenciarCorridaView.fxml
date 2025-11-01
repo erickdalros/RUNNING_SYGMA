@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicialCorridaController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciarCorridaController">
     <children>
         <Text layoutX="215.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE CORREDOR" textAlignment="CENTER" wrappingWidth="472.5367736816406">
             <font>
@@ -16,10 +16,10 @@
             </font>
         </Text>
         <ComboBox layoutX="324.0" layoutY="123.0" prefHeight="26.0" prefWidth="252.0" />
-        <Button layoutX="14.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="MENU PRINCIPAL" />
-        <Button layoutX="659.0" layoutY="446.0" mnemonicParsing="false" prefHeight="125.0" prefWidth="196.0" text="CHEGOU" />
+        <Button fx:id="MenuPrincipal" layoutX="14.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="MENU PRINCIPAL" onAction="#GoToMenuPrincipal" />
+        <Button fx:id="Chegou" layoutX="659.0" layoutY="446.0" mnemonicParsing="false" prefHeight="125.0" prefWidth="196.0" text="CHEGOU" onAction="#GoToChegou"/>
         <Line endX="799.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="201.0" startX="-100.0" />
-      <Button layoutX="757.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="TABELA CORRIDA" />
+      <Button fx:id="TabelaCorrida" layoutX="757.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="TABELA CORRIDA" onAction="#GoToTabelaCorrida" />
       <TextField layoutX="10.0" layoutY="213.0" prefHeight="189.0" prefWidth="878.0">
          <font>
             <Font size="75.0" />

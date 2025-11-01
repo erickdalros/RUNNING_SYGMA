@@ -42,9 +42,9 @@ public class MenuController {
 
     @FXML
     private void GoToGerenciarCorrida() {
-        System.out.println("Mudando a scena de nome IniciarCorridaView.fxml");
+        System.out.println("Mudando a scena de nome GerenciarCorridaView.fxml");
         Stage stage = (Stage) GerenciarCorrida.getScene().getWindow();
-        Telas.alterarTela(stage, "/view/corrida/IniciarCorridaView.fxml");
+        Telas.alterarTela(stage, "/view/corrida/GerenciarCorridaView.fxml");
     }
 
     @FXML
