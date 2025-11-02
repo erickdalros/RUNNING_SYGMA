@@ -16,7 +16,7 @@
                 <Font size="30.0" />
             </font>
         </Text>
-        <ComboBox layoutX="324.0" layoutY="123.0" prefHeight="26.0" prefWidth="252.0" />
+        <ComboBox fx:id="listaBancos" layoutX="324.0" layoutY="123.0" prefHeight="26.0" prefWidth="252.0" onAction="#GoToMostrarListainitializeDeBancoDeDados"/>
         <Button fx:id="MenuPrincipal" layoutX="14.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="MENU PRINCIPAL" onAction="#GoToMenuPrincipal" />
         <Button fx:id="AtualizarLista" layoutX="755.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="ATUALIZAR LISTA" onAction="#GoToAtualizarLista" />
         <Button fx:id="CadastrarBancoDeDados" layoutX="276.0" layoutY="486.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="335.0" text="CADASTRAR BANCO DE DADOS" onAction="#GoToCriarBancoDeDados" />
@@ -26,6 +26,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="311.0" layoutY="349.0" prefHeight="27.0" prefWidth="252.0" />
+      <TextField fx:id="NomeBanco" layoutX="311.0" layoutY="349.0" prefHeight="27.0" prefWidth="252.0" />
     </children>
 </AnchorPane>
