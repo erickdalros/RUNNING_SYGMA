@@ -9,9 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import telas.Telas;
 import util.AlertUtils;
-
+import dao.Create;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +35,18 @@ public class VerificarBancoDeDadosController {
     private ComboBox<String> listaBancos;
 
     @FXML
+    public void criarBancoDeDados() { /* da um erro mas cria a tabela */
+        String nome = NomeBanco.getText();
+        Create create = new Create();
+        try {
+            create.criarTabelaDefault(nome);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
     public void initialize() { // deve ser dado o select aqui
 
         List<String> list = new ArrayList<>();
@@ -53,47 +66,6 @@ public class VerificarBancoDeDadosController {
         System.out.println("Mudando a scena de nome MenuPrincipal.fxml");
         Stage stage = (Stage) MenuPrincipal.getScene().getWindow();
         Telas.alterarTela(stage, "/view/menu/MenuPrincipal.fxml");
-    }
-   @FXML
-    public void GoToCriarBancoDeDados() {
-
-        String nomeBancoDados = NomeBanco.getText().trim();
-
-        if (nomeBancoDados.isEmpty()) {
-            AlertUtils.mostrarAlerta("ATENÇÃO", null,
-                    "O nome do banco de dados não pode ser vazio", Alert.AlertType.WARNING);
-            return;
-        }
-
-        if (!nomeBancoDados.endsWith(".db")) {
-            nomeBancoDados += ".db";
-        }
-
-        String pastaRelativa = "src/main/java/data";
-        File pasta = new File(pastaRelativa);
-        if (!pasta.exists()) {
-            pasta.mkdirs();
-        }
-
-        File arquivoBanco = new File(pasta, nomeBancoDados);
-        try {
-            if (!arquivoBanco.exists()) {
-                boolean criado = arquivoBanco.createNewFile();
-                if (criado) {
-                    System.out.println("Banco criado em: " + arquivoBanco.getAbsolutePath());
-                } else {
-                    System.out.println("Banco já existe em: " + arquivoBanco.getAbsolutePath());
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            AlertUtils.mostrarAlerta("ERRO", null,
-                    "Erro ao criar o banco de dados:\n" + e.getMessage(), Alert.AlertType.ERROR);
-            return;
-        }
-
-        String url = "jdbc:sqlite:" + arquivoBanco.getAbsolutePath();
-        System.out.println("URL do banco: " + url);
     }
 
     @FXML
