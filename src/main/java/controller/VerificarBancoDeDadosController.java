@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import dao.Select;
+
 
 public class VerificarBancoDeDadosController {
 
@@ -49,10 +51,13 @@ public class VerificarBancoDeDadosController {
     @FXML
     public void initialize() { // deve ser dado o select aqui
 
-        List<String> list = new ArrayList<>();
-        list.add(0,"Corrida01112025");
-        list.add(1,"Corrida10112025");
-        listaBancos.setItems(FXCollections.observableArrayList(list));
+        Select select = new Select();
+
+        List<String> nomeTabela = select.selectTabelas();
+        listaBancos.setItems(FXCollections.observableArrayList(nomeTabela));
+        if (!nomeTabela.isEmpty()) {
+            listaBancos.getSelectionModel().selectFirst();
+        }
     }
 
     @FXML
