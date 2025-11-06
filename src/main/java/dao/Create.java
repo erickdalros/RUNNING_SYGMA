@@ -13,13 +13,13 @@ public class Create {
         String query = "CREATE TABLE IF NOT EXISTS " + nome + " (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "NUMERO INTEGER, " +
-                "NOME TEXT NOT NULL, " +
-                "NASCIMENTO TEXT NOT NULL, " +
+                "NOME TEXT , " +
+                "NASCIMENTO TEXT , " +
                 "DOCUMENTO INTEGER, " +
-                "CELULAR TEXT NOT NULL, " +
-                "SEXO TEXT NOT NULL, " +
-                "GRUPO TEXT NOT NULL, " +
-                "DEL TEXT NOT NULL DEFAULT ' ' " +
+                "CELULAR TEXT , " +
+                "SEXO TEXT, " +
+                "GRUPO TEXT, " +
+                "DEL TEXT DEFAULT ' ' " +
                 ");";
 
         try (Connection conn = Config.abrirConexao()) {

@@ -14,7 +14,7 @@ public class Select {
     public List<String> selectTabelas() {
 
         String sql = """
-                SELECT TBL_NAME FROM sqlite_master WHERE type='table' AND TBL_NAME <> 'sqlite_sequence';
+                SELECT TBL_NAME FROM sqlite_master WHERE type='table' AND TBL_NAME <> 'sqlite_sequence' ORDER BY TBL_NAME;
                 """;
 
         try (Connection conn = Config.abrirConexao()) {

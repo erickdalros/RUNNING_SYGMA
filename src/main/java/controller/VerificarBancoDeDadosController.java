@@ -49,7 +49,7 @@ public class VerificarBancoDeDadosController {
     }
 
     @FXML
-    public void initialize() { // deve ser dado o select aqui
+    public void initialize() {
 
         Select select = new Select();
 
@@ -73,9 +73,5 @@ public class VerificarBancoDeDadosController {
         Telas.alterarTela(stage, "/view/menu/MenuPrincipal.fxml");
     }
 
-    @FXML
-    public void GoToAtualizarLista(){
-        System.out.println("Atualizando a lista de bancos de dados....");
-    }
 
 }

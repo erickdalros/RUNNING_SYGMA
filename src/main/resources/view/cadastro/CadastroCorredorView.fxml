@@ -9,29 +9,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroCorredorController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroCorredorController">
     <children>
         <Text layoutX="215.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE CORREDOR" textAlignment="CENTER" wrappingWidth="472.5367736816406">
             <font>
                 <Font size="30.0" />
             </font>
         </Text>
-        <ComboBox layoutX="324.0" layoutY="123.0" prefHeight="26.0" prefWidth="252.0" />
-        <Button fx:id="MenuPrincipal" layoutX="14.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="MENU PRINCIPAL" onAction="#GoToMenuPricipal" />
-        <Button fx:id="AtualizarLista" layoutX="755.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="ATUALIZAR LISTA" onAction="#GoToAtualizarLista" />
+        <ComboBox fx:id="listaBancos" layoutX="324.0" layoutY="123.0" onAction="#GoToMostrarListainitializeDeBancoDeDados" prefHeight="26.0" prefWidth="252.0" />
+        <Button fx:id="MenuPrincipal" layoutX="14.0" layoutY="123.0" mnemonicParsing="false" onAction="#GoToMenuPricipal" prefHeight="26.0" prefWidth="129.0" text="MENU PRINCIPAL" />
+        <!-- <Button fx:id="AtualizarLista" layoutX="755.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="ATUALIZAR LISTA" onAction="#GoToAtualizarLista" /> -->
       <Label layoutX="74.0" layoutY="233.0" prefHeight="26.0" prefWidth="142.0" text="NÚMERO DO CORREDOR" textAlignment="CENTER" />
       <TextField fx:id="NumeroCorredor" layoutX="71.0" layoutY="259.0" prefHeight="26.0" prefWidth="142.0" />
-      <Label  layoutX="380.0" layoutY="233.0" prefHeight="26.0" prefWidth="142.0" text="NOME COMPLETO" textAlignment="CENTER" />
+      <Label layoutX="380.0" layoutY="233.0" prefHeight="26.0" prefWidth="142.0" text="NOME COMPLETO" textAlignment="CENTER" />
       <TextField fx:id="NomeCompleto" layoutX="377.0" layoutY="259.0" prefHeight="26.0" prefWidth="142.0" />
-      <Label  layoutX="690.0" layoutY="233.0" prefHeight="26.0" prefWidth="142.0" text="DATA DE NASCIMENTO" textAlignment="CENTER" />
+      <Label layoutX="690.0" layoutY="233.0" prefHeight="26.0" prefWidth="142.0" text="DATA DE NASCIMENTO" textAlignment="CENTER" />
       <TextField fx:id="DataNascimento" layoutX="687.0" layoutY="259.0" prefHeight="26.0" prefWidth="142.0" />
-      <Label  layoutX="72.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="DOCUMENTO PESSOAL" textAlignment="CENTER" />
+      <Label layoutX="72.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="DOCUMENTO PESSOAL" textAlignment="CENTER" />
       <TextField fx:id="DocumentoPessoal" layoutX="69.0" layoutY="365.0" prefHeight="26.0" prefWidth="142.0" />
-      <Label  layoutX="378.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="EMAIL PESSOAL" textAlignment="CENTER" />
-      <TextField fx:id="Email" layoutX="375.0" layoutY="365.0" prefHeight="26.0" prefWidth="142.0" />
-      <Label  layoutX="691.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="CELULAR" textAlignment="CENTER" />
+      <Label layoutX="378.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="GÊNERO PESSOAL" textAlignment="CENTER" />
+      <Label layoutX="691.0" layoutY="339.0" prefHeight="26.0" prefWidth="142.0" text="CELULAR PESSOAL" textAlignment="CENTER" />
       <TextField fx:id="Celular" layoutX="688.0" layoutY="365.0" prefHeight="26.0" prefWidth="142.0" />
-      <Button fx:id="CadastrarCorredor" layoutX="283.0" layoutY="491.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="335.0" text="CADASTRAR CORREDOR" onAction="#GetValuesLabels" />
+      <Button fx:id="CadastrarCorredor" layoutX="283.0" layoutY="491.0" mnemonicParsing="false" onAction="#GetValuesLabels" onMouseClicked="#clearTextField" prefHeight="33.0" prefWidth="335.0" text="CADASTRAR CORREDOR" />
       <Line endX="799.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="201.0" startX="-100.0" />
+      <ComboBox fx:id="Genero" layoutX="376.0" layoutY="365.0" prefHeight="26.0" prefWidth="142.0" onAction="#GoToMostrarListainitializeDeBancoDeDados"/>
     </children>
 </AnchorPane>
