@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import model.Corredor;
+
 
 public class Select {
 
@@ -18,10 +20,10 @@ public class Select {
                 """;
 
         try (Connection conn = Config.abrirConexao()) {
-            if(conn != null) {
+            if (conn != null) {
                 Statement stmt = conn.createStatement();
                 ResultSet row = stmt.executeQuery(sql);
-                while(row.next()) {
+                while (row.next()) {
                     nomeTabela.add(row.getString("TBL_NAME"));
                     /*for(String nomes : nomeTabela) {
                         System.out.println(nomes);
@@ -39,4 +41,44 @@ public class Select {
         return nomeTabela;
     }
 
+
+
+
+    public ArrayList<Corredor> listaCorredores(String tabela) {
+
+        List<Corredor> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM " + tabela ;
+
+        try (Connection conn = Config.abrirConexao()) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                ResultSet row = stmt.executeQuery(sql);
+                while (row.next()) {
+                    Corredor corredor = new Corredor(
+                        row.getString("ID"),
+                        row.getString("NUMERO"),
+                        row.getString("NOME"),
+                        row.getString("NASCIMENTO"),
+                        row.getString("DOCUMENTO"),
+                        row.getString("CELULAR"),
+                        row.getString("SEXO"),
+                        row.getString("GRUPO"),
+                        row.getString("DEL")
+                    );
+                    lista.add(corredor);
+                }
+                System.out.println("Select dos corredores da tabela " + tabela + " realizado com SUCESSO");
+            } else {
+                System.out.println("Erro ao executar o select");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (ArrayList<Corredor>) lista;
+    }
+
 }
+
+
+
