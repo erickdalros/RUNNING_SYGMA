@@ -9,7 +9,7 @@ import util.AlertUtils;
 
 public class MenuController {
 
-     Telas telas = new Telas();
+    Telas telas = new Telas();
 
     @FXML
     private Button VerificarBancoDeDados;
