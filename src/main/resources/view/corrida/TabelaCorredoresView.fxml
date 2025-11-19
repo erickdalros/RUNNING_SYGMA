@@ -22,15 +22,17 @@
         <Button fx:id="TabelaCorrida" layoutX="757.0" layoutY="123.0" mnemonicParsing="false" onAction="#GoToTabelaCorrida" prefHeight="26.0" prefWidth="129.0" text="SELECIONAR TABELA" />
       <TableView fx:id="listaCorredores" layoutX="13.0" layoutY="215.0" prefHeight="371.0" prefWidth="874.0">
         <columns>
-            <TableColumn fx:id="colId" prefWidth="50.39999580383301" text="ID" />
-            <TableColumn fx:id="colNumero" prefWidth="71.99999237060547" text="NÚMERO" />
-            <TableColumn fx:id="colNome" prefWidth="150.4000244140625" text="NOME CORREDOR" />
-            <TableColumn fx:id="colNascimento" prefWidth="95.20001220703125" text="NASCIMENTO" />
-            <TableColumn fx:id="colDocumento" prefWidth="164.00003051757812" text="DOCUMENTO" />
-            <TableColumn fx:id="colCelular" prefWidth="87.20001220703125" text="CELULAR" />
-            <TableColumn fx:id="colSexo" prefWidth="102.40008544921875" text="SEXO" />
-            <TableColumn fx:id="colGrupo" minWidth="0.0" prefWidth="103.9998779296875" text="GRUPO" />
-            <TableColumn fx:id="colDel" prefWidth="52.79998779296875" text="DEL" />
+            <TableColumn fx:id="colId" prefWidth="20.000001907348633" text="ID" />
+            <TableColumn fx:id="colNumero" prefWidth="68.0" text="NÚMERO" />
+            <TableColumn fx:id="colNome" prefWidth="151.99999237060547" text="NOME CORREDOR" />
+            <TableColumn fx:id="colNascimento" prefWidth="91.99993896484375" text="NASCIMENTO" />
+            <TableColumn fx:id="colDocumento" prefWidth="108.80007934570312" text="DOCUMENTO" />
+            <TableColumn fx:id="colCelular" prefWidth="86.40005493164062" text="CELULAR" />
+            <TableColumn fx:id="colSexo" prefWidth="76.0" text="SEXO" />
+            <TableColumn fx:id="colGrupo" minWidth="0.0" prefWidth="67.20001220703125" text="GRUPO" />
+            <TableColumn fx:id="colTempo" minWidth="0.0" prefWidth="81.60003662109375" text="TEMPO" />
+            <TableColumn fx:id="colPace" minWidth="0.0" prefWidth="45.60009765625" text="PACE" />
+            <TableColumn fx:id="colPosicao" minWidth="0.0" prefWidth="83.1998291015625" text="POSIÇÃO" />
         </columns>
       </TableView>
     </children>

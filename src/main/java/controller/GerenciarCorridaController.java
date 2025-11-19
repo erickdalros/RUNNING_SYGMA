@@ -1,12 +1,15 @@
 package controller;
 
+import dao.Select;
 import javafx.animation.AnimationTimer;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import telas.Telas;
 import util.AlertUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 public class GerenciarCorridaController {
@@ -25,6 +28,9 @@ public class GerenciarCorridaController {
 
     @FXML
     private Button finalizarCorridaAction;
+
+    @FXML
+    private ComboBox<String> listaBancos;
 
     @FXML
     private Label labelCronometro;
@@ -85,6 +91,23 @@ public class GerenciarCorridaController {
                 timer.start();
             }
         });
+    }
+    @FXML
+    public void initialize() {
+
+        Select select = new Select();
+
+        List<String> nomeTabela = select.selectTabelas();
+        listaBancos.setItems(FXCollections.observableArrayList(nomeTabela));
+        if (!nomeTabela.isEmpty()) {
+            listaBancos.getSelectionModel().selectFirst();
+        }
+    }
+
+    @FXML
+    public void GoToMostrarListainitializeDeBancoDeDados() {
+        String valorSelecionado = listaBancos.getValue();
+        System.out.println("Banco selecionado: " + valorSelecionado);
     }
 
     public void GoToMenuPrincipal() {

@@ -44,6 +44,12 @@ public class TabelaCorredoresController {
     @FXML
     private TableColumn<Corredor, String> colGrupo;
     @FXML
+    private TableColumn<Corredor, String> colTempo;
+    @FXML
+    private TableColumn<Corredor, String> colPace;
+    @FXML
+    private TableColumn<Corredor, String> colPosicao;
+    @FXML
     private TableColumn<Corredor, String> colDel;
 
 
@@ -61,7 +67,9 @@ public class TabelaCorredoresController {
         colCelular.setCellValueFactory(new PropertyValueFactory<>("celular"));
         colSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
         colGrupo.setCellValueFactory(new PropertyValueFactory<>("grupo"));
-        colDel.setCellValueFactory(new PropertyValueFactory<>("del"));
+        colTempo.setCellValueFactory(new PropertyValueFactory<>("tempo"));
+        colPace.setCellValueFactory(new PropertyValueFactory<>("pace"));
+        colPosicao.setCellValueFactory(new PropertyValueFactory<>("posicao"));
 
         List<String> nomesTabelas = select.selectTabelas();
         listaBancos.setItems(FXCollections.observableArrayList(nomesTabelas));

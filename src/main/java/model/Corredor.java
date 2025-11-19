@@ -10,10 +10,13 @@ public class Corredor {
     private String celular;
     private String sexo;
     private String grupo;
+    private String tempo;
+    private String pace;
+    private String posicao;
     private String del;
 
     public Corredor(String id, String numero, String nome, String nascimento, String documento,
-                     String celular, String sexo, String grupo, String del) {
+                     String celular, String sexo, String grupo, String tempo, String pace, String posicao) {
         this.id = id;
         this.numero = numero;
         this.nome = nome;
@@ -22,7 +25,9 @@ public class Corredor {
         this.celular = celular;
         this.sexo = sexo;
         this.grupo = grupo;
-        this.del = del;
+        this.tempo = tempo;
+        this.pace = pace;
+        this.posicao = posicao;
 
 
     }

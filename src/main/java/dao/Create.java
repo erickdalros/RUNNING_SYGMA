@@ -19,6 +19,9 @@ public class Create {
                 "CELULAR TEXT , " +
                 "SEXO TEXT, " +
                 "GRUPO TEXT, " +
+                "TEMPO TEXT, " +
+                "PACE TEXT, " +
+                "POSICAO TEXT, " +
                 "DEL TEXT DEFAULT ' ' " +
                 ");";
 

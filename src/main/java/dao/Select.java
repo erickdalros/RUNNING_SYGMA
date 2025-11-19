@@ -64,7 +64,9 @@ public class Select {
                         row.getString("CELULAR"),
                         row.getString("SEXO"),
                         row.getString("GRUPO"),
-                        row.getString("DEL")
+                        row.getString("TEMPO"),
+                        row.getString("PACE"),
+                        row.getString("POSICAO")
                     );
                     lista.add(corredor);
                 }
