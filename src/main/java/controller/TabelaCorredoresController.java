@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import telas.Telas;
 import model.Corredor;
@@ -26,7 +27,6 @@ public class TabelaCorredoresController {
     private ComboBox<String> listaBancos;
     @FXML
     private TableView<Corredor> listaCorredores;
-
     @FXML
     private TableColumn<Corredor, String> colId;
     @FXML
@@ -57,11 +57,19 @@ public class TabelaCorredoresController {
     @FXML
     public void initialize() {
         Select select = new Select();
+        listaCorredores.setEditable(true);
 
         // Configura colunas do TableView
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNumero.setCellValueFactory(new PropertyValueFactory<>("numero"));
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colNome.setCellFactory(TextFieldTableCell.forTableColumn());
+        colNome.setOnEditCommit(event -> {
+            Corredor updateDado = event.getRowValue();
+            updateDado.setNome(event.getNewValue());
+            System.out.println("Novo dado atualizado: " + updateDado.getNome());
+
+        });
         colNascimento.setCellValueFactory(new PropertyValueFactory<>("nascimento"));
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colCelular.setCellValueFactory(new PropertyValueFactory<>("celular"));
